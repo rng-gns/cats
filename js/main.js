@@ -43,18 +43,34 @@ function modalClose(){
     document.querySelector('.modal-wrap')
         .classList.remove('active')
 }
+function catAge(age){
+    let n_1 = age % 100;
+    let n_2 = n_1 % 10;
+    let result=`${age} лет`
 
+    if (n_1 > 10 && n_1 < 20) {
+        result=`${age} лет`
+    }
+    else if (n_2 > 1 && n_2  < 5) {
+        result=`${age} года`
+    }
+    else if (n_2 === 1) {
+        result=`${age} год`
+    }
+    return result
+}
 function loadModalData(){
     let id = this.dataset.id;
     let catData = getModalData(id);
     let modalWrap = document.querySelector('.modal-wrap');
     let modalContent = modalWrap.querySelector('.modal-content');
-
+    let age = catAge(catData.age)
     modalContent.innerHTML = `
         <div class="img" style="background-image: url(${catData.img_link})"></div>
-        <div class="name">${catData.name}</div>
-        <div class="age">${catData.age}</div>
-        <div class="description">${catData.description}</div>
+        <div class="info">
+            <div class="name">${catData.name} <span>(${age})</span></div>
+            <div class="description">${catData.description}</div>
+        </div>
     `;
     document.body.classList.add('modal-active')
     modalWrap.classList.add('active');
@@ -64,3 +80,5 @@ function getModalData(catId)
 {
     return cats.find(item => item.id == catId)
 }
+
+
