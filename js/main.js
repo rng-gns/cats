@@ -1,12 +1,12 @@
 const container = document.querySelector(".container");
 
 let path = {
-    getAll: "http://sb-cats.herokuapp.com/api/2/nadin1986/show",
-    getOne: "http://sb-cats.herokuapp.com/api/2/nadin1986/show/",
-    getId: "http://sb-cats.herokuapp.com/api/2/nadin1986/ids",
-    add: "http://sb-cats.herokuapp.com/api/2/nadin1986/add",
-    upd: "http://sb-cats.herokuapp.com/api/2/nadin1986/update/",
-    del: "http://sb-cats.herokuapp.com/api/2/nadin1986/delete/"
+    getAll: "https://sb-cats.herokuapp.com/api/2/nadin1986/show",
+    getOne: "https://sb-cats.herokuapp.com/api/2/nadin1986/show/",
+    getId: "https://sb-cats.herokuapp.com/api/2/nadin1986/ids",
+    add: "https://sb-cats.herokuapp.com/api/2/nadin1986/add",
+    upd: "https://sb-cats.herokuapp.com/api/2/nadin1986/update/",
+    del: "https://sb-cats.herokuapp.com/api/2/nadin1986/delete/"
 }
 
 if (container != null) {
