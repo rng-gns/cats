@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)http://localhost:63342/lesson_10/index.html?_ijt=f88qsqgdcvhb2rt3vjcrm2bt09&_ij_reload=RELOAD_ON_SAVE -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>React Start</title>
+  <link rel="stylesheet" href="./index_files/normalize.css">
+  <link rel="stylesheet" href="./index_files/main.css">
+  <script src="./index_files/react.development.js" crossorigin=""></script>
+  <script src="./index_files/react-dom.development.js" crossorigin=""></script>
+  <script src="./index_files/babel.min.js"></script>
+<script>"use strict";
+
+ReactDOM.render( /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "Hello, React!"), /*#__PURE__*/React.createElement("p", null, "This is my first React app!"), /*#__PURE__*/React.createElement("input", {
+  type: "text",
+  value: "text"
+})), document.querySelector("#app"));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwibmFtZXMiOlsiUmVhY3RET00iLCJyZW5kZXIiLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiXSwibWFwcGluZ3MiOiI7O0FBQ0VBLFFBQVEsQ0FBQ0MsTUFBVCxlQUNRLDhDQUNRLGdEQURSLGVBRVEsNkRBRlIsZUFHRTtBQUFPLEVBQUEsSUFBSSxFQUFDLE1BQVo7QUFBbUIsRUFBQSxLQUFLLEVBQUM7QUFBekIsRUFIRixDQURSLEVBT1FDLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixNQUF2QixDQVBSIiwic291cmNlc0NvbnRlbnQiOlsiXG4gIFJlYWN0RE9NLnJlbmRlcihcbiAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgPGgxPkhlbGxvLCBSZWFjdCE8L2gxPlxuICAgICAgICAgICAgICAgICAgPHA+VGhpcyBpcyBteSBmaXJzdCBSZWFjdCBhcHAhPC9wPlxuICAgICAgICAgICAgPGlucHV0IHR5cGU9XCJ0ZXh0XCIgdmFsdWU9XCJ0ZXh0XCIgLz5cblxuICAgICAgICAgIDwvZGl2PixcbiAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI2FwcFwiKVxuICApO1xuXG4iXX0=</script></head>
+
+<body>
+<div id="app"><div><h1>Hello, React!</h1><p>This is my first React app!</p><input type="text" value="text"></div></div>
+<script type="text/babel">
+  ReactDOM.render(
+          <div>
+                  <h1>Hello, React!</h1>
+                  <p>This is my first React app!</p>
+            <input type="text" value="text" />
+
+          </div>,
+          document.querySelector("#app")
+  );
+
+</script>
+
+
+
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host + '/jb-server-page?reloadServiceClientId=79');
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash 
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' + 
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script></body></html>
